@@ -1,22 +1,6 @@
-mod front_of_house {
-    pub mod hosting {
-        fn add_to_waitlist() {
-            println!("hello")
-        }
+mod front_of_house;
 
-        pub fn seat_at_table() {
-            add_to_waitlist();
-        }
-    }
-
-    mod serving {
-        fn take_order() {}
-
-        fn serve_order() {}
-
-        fn take_payment() {}
-    }
-}
+pub use crate::front_of_house::hosting;
 
 mod back_of_house {
     pub enum Appetizer {
@@ -46,4 +30,8 @@ pub fn eat_at_restaurant() {
 
     let orderOne = back_of_house::Appetizer::Soup;
     let orderTwo = back_of_house::Appetizer::Salad;
+
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
+    hosting::add_to_waitlist();
 }

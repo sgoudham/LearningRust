@@ -1,5 +1,3 @@
-use core::alloc;
-
 struct List<T> {
     list: Vec<T>,
 }
